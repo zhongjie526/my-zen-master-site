@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Zen Master — Support</title>
+  <style>
+    :root {
+      --bg: #0d1b1e;
+      --bg-surface: #132a2e;
+      --text: #e4e8e9;
+      --text-muted: #8fa3a7;
+      --accent: #4a9168;
+      --accent-glow: #5ab87e;
+      --border: #2a4a4e;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header .icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .muted { color: var(--text-muted); font-size: 0.9rem; }
+
+    a { color: var(--accent-glow); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.4rem; }
+    li::marker { color: var(--accent); }
+
+    .contact-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .contact-box p { margin-bottom: 0.5rem; }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 3rem 1.25rem; }
+      header h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="icon">🪷</div>
+      <h1>Support</h1>
+      <p>My Zen Master — Help & FAQ</p>
+    </header>
+
+    <section>
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>How big is the download?</h3>
+      <p>The app itself is small. On first launch, it downloads an AI model (~1.8 GB) from a CDN. After that, everything runs offline — no further downloads needed.</p>
+
+      <h3>Why does it need so much storage?</h3>
+      <p>The AI model runs entirely on your device so your conversations stay private. That requires a larger model file, but it means nothing is ever sent to a server.</p>
+
+      <h3>Can I use it without internet?</h3>
+      <p>Yes — after the initial model download, the app works completely offline. Airplane mode, no Wi-Fi, anywhere.</p>
+
+      <h3>Does it collect any data?</h3>
+      <p>No. Zero analytics, zero tracking, zero cloud. Your reflections never leave your phone. See our <a href="/my-zen-master-site/privacy.html">Privacy Policy</a> for the full details.</p>
+
+      <h3>What devices are supported?</h3>
+      <p>My Zen Master requires an iPhone with at least 4 GB of RAM (iPhone XS or later) running iOS 16+.</p>
+
+      <h3>The responses feel slow — is that normal?</h3>
+      <p>The AI runs on your phone's processor, so responses take 15–30 seconds depending on your device. Newer iPhones are faster. This is the trade-off for complete privacy.</p>
+
+      <h3>Can I clear my conversation history?</h3>
+      <p>Yes — tap the new conversation button (pencil icon) in the top right to start fresh. The master's memory of your past reflections can be cleared in Settings.</p>
+
+      <h3>Is this a replacement for therapy?</h3>
+      <p>No. My Zen Master is a reflection companion, not a therapist. If you're experiencing a mental health crisis, please reach out to a qualified professional or your local emergency services.</p>
+    </section>
+
+    <section>
+      <h2>Still need help?</h2>
+      <div class="contact-box">
+        <p><strong>Report a bug or request a feature:</strong></p>
+        <p><a href="https://github.com/zhongjie526/mind-insight-ios-app/issues">Open an issue on GitHub</a></p>
+        <p style="margin-top: 1rem;"><strong>Or email us directly:</strong></p>
+        <p><a href="mailto:zzj.anonymous@gmail.com">zzj.anonymous@gmail.com</a></p>
+      </div>
+    </section>
+
+    <a href="/my-zen-master-site/" class="back-link">← Back to My Zen Master</a>
+  </div>
+</body>
+</html>

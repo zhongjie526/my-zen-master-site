@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Zen Master — A Private Buddhist Reflection Companion</title>
+  <meta name="description" content="A private, offline AI companion for Buddhist reflection. Ask about stress, anxiety, identity, or anything on your mind. No internet, no tracking, just wisdom.">
+  <meta name="keywords" content="buddhist meditation app, offline meditation, zen master, mindfulness, reflection, anxiety, stress relief, buddhism, privacy">
+  <meta property="og:title" content="My Zen Master — A Private Buddhist Reflection Companion">
+  <meta property="og:description" content="Ask anything. No internet, no subscriptions, no data leaving your phone. Just a quiet conversation with 2,500 years of wisdom.">
+  <meta property="og:image" content="images/app-icon.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="/my-zen-master-site/images/app-icon.png">
+  <style>
+    :root {
+      --bg: #0d1b1e;
+      --bg-surface: #132a2e;
+      --bg-card: #1a3338;
+      --text: #e4e8e9;
+      --text-muted: #8fa3a7;
+      --accent: #4a9168;
+      --accent-glow: #5ab87e;
+      --accent-dim: #3a7054;
+      --gold: #c9a96e;
+      --border: #2a4a4e;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 5rem 1.5rem 4rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 26px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 40px rgba(74, 145, 104, 0.25);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero .tagline {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .app-store-badge {
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+    .app-store-badge:hover { opacity: 0.85; }
+    .app-store-badge img { height: 52px; }
+
+    /* ===== QUOTE ===== */
+    .quote-section {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .quote-section blockquote {
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--text-muted);
+      border: none;
+      padding: 0;
+      line-height: 1.8;
+    }
+
+    /* ===== SCREENSHOTS ===== */
+    .screenshots {
+      padding: 2rem 1.5rem 4rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .screenshots-inner {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .screenshot-item {
+      flex: 0 0 auto;
+      text-align: center;
+    }
+
+    .screenshot-item img {
+      width: 260px;
+      border-radius: 20px;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+    }
+
+    .screenshot-item .caption {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ===== FEATURES ===== */
+    .features {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 2.5rem;
+      color: var(--text);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+
+    .feature-card .icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .how-it-works {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+      text-align: center;
+    }
+
+    .how-it-works h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      text-align: left;
+    }
+
+    .step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      flex: 0 0 auto;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent-dim);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-top: 2px;
+    }
+
+    .step-text h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .step-text p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ===== PRIVACY BANNER ===== */
+    .privacy-banner {
+      max-width: 640px;
+      margin: 0 auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    .privacy-banner-inner {
+      background: var(--bg-surface);
+      border: 1px solid var(--accent-dim);
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .privacy-banner-inner .icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+
+    .privacy-banner-inner h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .privacy-banner-inner p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+    }
+
+    .cta h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .cta p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem 3rem;
+      border-top: 1px solid var(--border);
+      max-width: 640px;
+      margin: 2rem auto 0;
+    }
+
+    footer p {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-bottom: 0.4rem;
+    }
+
+    footer a {
+      color: var(--accent-glow);
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .hero { padding: 3.5rem 1.25rem 3rem; }
+      .hero h1 { font-size: 2rem; }
+      .hero .tagline { font-size: 1.05rem; }
+      .hero-icon { width: 96px; height: 96px; border-radius: 22px; }
+
+      .feature-grid { grid-template-columns: 1fr; }
+
+      .screenshots-inner {
+        justify-content: flex-start;
+        padding: 0 0.5rem;
+      }
+      .screenshot-item img { width: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="/my-zen-master-site/images/app-icon.png" alt="My Zen Master app icon" class="hero-icon">
+    <h1>My Zen Master</h1>
+    <p class="tagline">
+      When life gets heavy, you don't always need an answer&hairsp;—&hairsp;sometimes you just need to be heard.
+    </p>
+    <a href="https://apps.apple.com/app/my-zen-master/id6744058562" class="app-store-badge" aria-label="Download on the App Store">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+    </a>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-section">
+    <blockquote>
+      "Ask anything. No internet, no subscriptions, no data leaving your phone.<br>
+      Just a quiet conversation with 2,500 years of wisdom."
+    </blockquote>
+  </section>
+
+  <!-- SCREENSHOTS -->
+  <section class="screenshots">
+    <div class="screenshots-inner">
+      <div class="screenshot-item">
+        <img src="/my-zen-master-site/images/screenshot-stress.png" alt="Conversation about work stress" loading="lazy">
+        <div class="caption">"I can't let go of stress after work"</div>
+      </div>
+      <div class="screenshot-item">
+        <img src="/my-zen-master-site/images/screenshot-self.png" alt="Conversation about identity and thoughts" loading="lazy">
+        <div class="caption">"How do I stop identifying with my thoughts?"</div>
+      </div>
+      <div class="screenshot-item">
+        <img src="/my-zen-master-site/images/screenshot-procrastination.png" alt="Conversation about procrastination" loading="lazy">
+        <div class="caption">"I keep procrastinating and feel guilty"</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <h2>What makes it different</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">✈️</div>
+        <h3>100% Offline</h3>
+        <p>Works on airplane mode, in the mountains, at 3am. No internet needed after initial setup.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📚</div>
+        <h3>Real Depth</h3>
+        <p>Draws from 9 wisdom traditions — Zen, Tiantai, Mādhyamika, Pema Chödrön, Eckhart Tolle, and more. Not generic affirmations.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔒</div>
+        <h3>Truly Private</h3>
+        <p>No accounts, no tracking, no cloud. Your reflections never leave your device. Ever.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">💚</div>
+        <h3>Free Forever</h3>
+        <p>No subscriptions, no ads, no in-app purchases. Just download and reflect.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🧠</div>
+        <h3>Remembers You</h3>
+        <p>The master remembers what you share across conversations — offering deeper, more personal reflections over time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🌏</div>
+        <h3>Multilingual</h3>
+        <p>Responds naturally in English, Chinese, and other languages. Just write in yours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <h3>Download the model</h3>
+          <p>On first launch, the app downloads a compact AI model (~1.8 GB). This is the only time it needs internet.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <h3>Ask anything</h3>
+          <p>Share what's on your mind — stress, relationships, meditation practice, existential questions, or just how your day went.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <h3>Reflect</h3>
+          <p>The master responds with grounded wisdom — not canned advice, not generic affirmations. Real perspective drawn from centuries of contemplative tradition.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY BANNER -->
+  <section class="privacy-banner">
+    <div class="privacy-banner-inner">
+      <div class="icon">🪷</div>
+      <h3>Whatever you tell the master, stays with the master.</h3>
+      <p>No servers. No cloud. No accounts. Everything runs on your iPhone.<br>Your reflections are truly, completely private.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Built with care. Free to use.</h2>
+    <p>No internet required. Just you and the question.</p>
+    <a href="https://apps.apple.com/app/my-zen-master/id6744058562" class="app-store-badge" aria-label="Download on the App Store">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="/my-zen-master-site/privacy.html">Privacy Policy</a>
+      <a href="/my-zen-master-site/support.html">Support</a>
+    </div>
+    <p>My Zen Master — Your reflections. Your device. Your path.</p>
+    <p>&copy; 2026</p>
+  </footer>
+
+</body>
+</html>
