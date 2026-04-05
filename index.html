@@ -90,6 +90,18 @@
       line-height: 1.8;
     }
 
+    /* ===== DEMO VIDEO ===== */
+    .demo-video {
+      text-align: center;
+      padding: 2rem 1.5rem 1rem;
+    }
+
+    .demo-video video {
+      width: 260px;
+      border-radius: 20px;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+    }
+
     /* ===== SCREENSHOTS ===== */
     .screenshots {
       padding: 2rem 1.5rem 4rem;
@@ -312,6 +324,7 @@
         padding: 0 0.5rem;
       }
       .screenshot-item img { width: 220px; }
+      .demo-video video { width: 220px; }
     }
   </style>
 </head>
@@ -329,6 +342,13 @@
     </a>
   </section>
 
+  <!-- DEMO VIDEO -->
+  <section class="demo-video">
+    <video autoplay muted loop playsinline>
+      <source src="/my-zen-master-site/images/demo.mp4" type="video/mp4">
+    </video>
+  </section>
+
   <!-- QUOTE -->
   <section class="quote-section">
     <blockquote>
@@ -341,16 +361,16 @@
   <section class="screenshots">
     <div class="screenshots-inner">
       <div class="screenshot-item">
-        <img src="/my-zen-master-site/images/screenshot-stress.png" alt="Conversation about work stress" loading="lazy">
-        <div class="caption">"I can't let go of stress after work"</div>
+        <img src="/my-zen-master-site/images/screenshot-stress.jpg" alt="Conversation about handling stress" loading="lazy">
+        <div class="caption">"How to handle stress"</div>
       </div>
       <div class="screenshot-item">
-        <img src="/my-zen-master-site/images/screenshot-self.png" alt="Conversation about identity and thoughts" loading="lazy">
-        <div class="caption">"How do I stop identifying with my thoughts?"</div>
+        <img src="/my-zen-master-site/images/screenshot-reactivity.jpg" alt="Conversation about reactivity" loading="lazy">
+        <div class="caption">"How do I stop reacting to things?"</div>
       </div>
       <div class="screenshot-item">
-        <img src="/my-zen-master-site/images/screenshot-procrastination.png" alt="Conversation about procrastination" loading="lazy">
-        <div class="caption">"I keep procrastinating and feel guilty"</div>
+        <img src="/my-zen-master-site/images/screenshot-want.jpg" alt="Conversation about desire and purpose" loading="lazy">
+        <div class="caption">"How do I know what I really want?"</div>
       </div>
     </div>
   </section>
